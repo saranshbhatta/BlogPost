@@ -10,6 +10,8 @@ namespace BlogProject.APIs
             app.MapGet("/Blogs/GetAllPostsWithCategories", GetAllPostsWithCategories);
             app.MapGet("/Blogs/GetPostById/{postId}", GetPostById);
             app.MapPost("/Blogs/CreateNewPost", CreateNewPost);
+            app.MapPost("/Blogs/CreateNewCategory", CreateNewCategory);
+            app.MapPost("/Blogs/GetCategoryWithFilter/", GetCategoryWithFilter);
         }
         private static async Task<IResult> GetAllPostsWithCategories(IBlogRepo repo)
         {
@@ -41,6 +43,30 @@ namespace BlogProject.APIs
             {
                 var blog = await repo.GetPostById(postId);
                 return Results.Ok(blog);
+            }
+            catch (Exception ex)
+            {
+                return Results.BadRequest(ex.Message);
+            }
+        }
+        private static async Task<IResult> CreateNewCategory(CategoryModel CategoryObj, IBlogRepo repo)
+        {
+            try
+            {
+                var category = await repo.CreateNewCategory(CategoryObj);
+                return Results.Ok(category);
+            }
+            catch (Exception ex)
+            {
+                return Results.BadRequest(ex.Message);
+            }
+        }
+        private static async Task<IResult> GetCategoryWithFilter(CategoryModel model, IBlogRepo repo)
+        {
+            try
+            {
+                var category = await repo.GetCategoryWithFilter(model);
+                return Results.Ok(category);
             }
             catch (Exception ex)
             {

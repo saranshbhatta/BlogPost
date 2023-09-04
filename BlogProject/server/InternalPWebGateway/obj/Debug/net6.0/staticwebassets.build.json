@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "0PzlSFGFS4+KrARXUKFT0QB0A/DDHfXQQGnTzjPRxtE=",
+  "Hash": "tSAG3UxUGCZ0yFdaJpHh08cu+DaR2QT8OXJaQHmr4Fg=",
   "Source": "InternalPWebGateway",
   "BasePath": "_content/InternalPWebGateway",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "E:\\Blop Post Project\\BlogProject\\BlogProject\\BlogProject.csproj",
+      "Identity": "E:\\Blop Post Project\\BlogProject\\server\\BlogProject\\BlogProject.csproj",
       "Version": 2,
       "Source": "BlogProject",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",

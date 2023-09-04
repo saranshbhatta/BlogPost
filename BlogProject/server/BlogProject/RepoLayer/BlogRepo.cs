@@ -46,5 +46,29 @@ namespace BlogProject.RepoLayer
                 throw e;
             }
         }
+        public async Task<string> CreateNewCategory(CategoryModel CategoryObj)
+        {
+            try
+            {
+                string blogs = await _dll.CreateNewCategory(CategoryObj);
+                return blogs;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+        public async Task<List<CategoryModel>> GetCategoryWithFilter(CategoryModel model)
+        {
+            try
+            {
+                List<CategoryModel> blogs = await _dll.GetCategoryWithFilter(model);
+                return blogs;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
     }
 }

@@ -54,8 +54,8 @@ namespace BlogProject.DataLayer
                     foreach (var item in blogObj.IngredientsList)
                     {
                         //how indg should be added should be final first so that lookup table should be updated or not
-                        string SPIndg = @"select blog.add_indg_main(@IndgId , @IndgQuantity , @blogId)";
-                        var parameters = new { blogId, IndgId = item.Id, IndgQuantity= item.IndgQuantity };
+                        string SPIndg = @"select blog.add_indg_main(@IndgId , @IndgQuantity , @blogId, @IndgName)";
+                        var parameters = new { blogId, IndgId = item.Id, IndgQuantity = item.IndgQuantity, IndgName = item.IndgName };
                         int indgId = await _db.ExecuteScalarAsync<dynamic, dynamic>(SPIndg, parameters, transaction: tran);
                     }
                     tran.Commit();
@@ -75,7 +75,7 @@ namespace BlogProject.DataLayer
             {
                 string SP = @"select blog.get_post_by_id(@postId);";
                 BlogModel blog = (await _db.LoadDataRefCursor<BlogModel, dynamic>(SP, new { postId })).FirstOrDefault();
-                if (blog!= null)
+                if (blog != null)
                 {
                     string SPCategory = @"select blog.get_category_list(@postId)";
                     string SPIndg = @"select blog.get_ingredient_list(@postId)";
@@ -95,6 +95,39 @@ namespace BlogProject.DataLayer
             }
         }
 
+        public async Task<string> CreateNewCategory(CategoryModel CategoryObj)
+        {
+            using (IDbTransaction tran = _db.BeginTransaction())
+            {
+                try
+                {
+                    string SP = @"select blog.create_new_category(@CategoryName)";
+                    string categoryName = await _db.ExecuteScalarAsync<CategoryModel, dynamic>(SP, CategoryObj, transaction: tran);
+                    tran.Commit();
+                    return categoryName;
+                }
+                catch (Exception e)
+                {
+                    _logger.LogError("BudgetDLL:SavingBudget : Error:{0}", e.Message);
+                    throw new Exception("Error while saving Budget: Error: " + e.Message);
+                }
+            }
+        }
+
+        public async Task<List<CategoryModel>> GetCategoryWithFilter(CategoryModel model)
+        {
+            try
+            {
+                string SP = @"select blog.get_category_with_filters(@Id, @CategoryName);";
+                List<CategoryModel> category = (await _db.LoadDataRefCursor<CategoryModel, dynamic>(SP, model)).ToList();
+                return category;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError("BlogDLL:GettingBlog : Error:{0}", e.Message);
+                throw new Exception("Error while Getting Blog Lists: Error: " + e.Message);
+            }
+        }
     }
 }
 

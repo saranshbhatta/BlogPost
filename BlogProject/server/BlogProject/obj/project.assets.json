@@ -1737,11 +1737,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Blop Post Project\\BlogProject\\BlogProject\\BlogProject.csproj",
+      "projectUniqueName": "E:\\Blop Post Project\\BlogProject\\server\\BlogProject\\BlogProject.csproj",
       "projectName": "BlogProject",
-      "projectPath": "E:\\Blop Post Project\\BlogProject\\BlogProject\\BlogProject.csproj",
+      "projectPath": "E:\\Blop Post Project\\BlogProject\\server\\BlogProject\\BlogProject.csproj",
       "packagesPath": "C:\\Users\\SaranshBhatta\\.nuget\\packages\\",
-      "outputPath": "E:\\Blop Post Project\\BlogProject\\BlogProject\\obj\\",
+      "outputPath": "E:\\Blop Post Project\\BlogProject\\server\\BlogProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\SaranshBhatta\\AppData\\Roaming\\NuGet\\NuGet.Config",

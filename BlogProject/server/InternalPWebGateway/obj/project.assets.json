@@ -1806,11 +1806,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Blop Post Project\\BlogProject\\InternalPWebGateway\\InternalPWebGateway.csproj",
+      "projectUniqueName": "E:\\Blop Post Project\\BlogProject\\server\\InternalPWebGateway\\InternalPWebGateway.csproj",
       "projectName": "InternalPWebGateway",
-      "projectPath": "E:\\Blop Post Project\\BlogProject\\InternalPWebGateway\\InternalPWebGateway.csproj",
+      "projectPath": "E:\\Blop Post Project\\BlogProject\\server\\InternalPWebGateway\\InternalPWebGateway.csproj",
       "packagesPath": "C:\\Users\\SaranshBhatta\\.nuget\\packages\\",
-      "outputPath": "E:\\Blop Post Project\\BlogProject\\InternalPWebGateway\\obj\\",
+      "outputPath": "E:\\Blop Post Project\\BlogProject\\server\\InternalPWebGateway\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\SaranshBhatta\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1828,8 +1828,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "E:\\Blop Post Project\\BlogProject\\BlogProject\\BlogProject.csproj": {
-              "projectPath": "E:\\Blop Post Project\\BlogProject\\BlogProject\\BlogProject.csproj"
+            "E:\\Blop Post Project\\BlogProject\\server\\BlogProject\\BlogProject.csproj": {
+              "projectPath": "E:\\Blop Post Project\\BlogProject\\server\\BlogProject\\BlogProject.csproj"
             }
           }
         }
